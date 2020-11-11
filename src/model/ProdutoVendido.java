@@ -1,20 +1,18 @@
 package model;
 
-import enums.FormasPagamento;
-
 public class ProdutoVendido {
 	private int codBarras;
 	private int quantidade;
 	private double totalCompra;
 	private double totalPagamento;
 	private double troco;
-	private FormasPagamento formaPagamento;
+	private String formaPagamento;
 	
 	public ProdutoVendido() {
 		
 	}
 	
-	public ProdutoVendido(int codBarras, int quantidade, double totalCompra, double totalPagamento, double troco, FormasPagamento formaPagamento) {
+	public ProdutoVendido(int codBarras, int quantidade, double totalCompra, double totalPagamento, double troco, String formaPagamento) {
 		this.codBarras = codBarras;
 		this.quantidade = quantidade;
 		this.totalCompra = totalCompra;
@@ -63,18 +61,13 @@ public class ProdutoVendido {
 		this.troco = troco;
 	}
 
-	public FormasPagamento getFormaPagamento() {
+	public String getFormaPagamento() {
 		return formaPagamento;
 	}
 
-	public void setFormaPagamento(FormasPagamento formaPagamento) {
+	public void setFormaPagamento(String formaPagamento) {
 		this.formaPagamento = formaPagamento;
 	}
-
-	@Override
-	public String toString() {
-		return "ProdutoVendido [codBarras=" + codBarras + ", quantidade=" + quantidade + ", totalCompra=" + totalCompra
-				+ ", totalPagamento=" + totalPagamento + ", troco=" + troco + ", formaPagamento=" + formaPagamento
-				+ "]";
-	}
+	
+	
 }

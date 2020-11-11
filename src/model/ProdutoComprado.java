@@ -1,19 +1,17 @@
 package model;
 
-import enums.UnidadesMedida;
-
 public class ProdutoComprado {
 	private int codBarras;
 	private String descricao;
 	private double precoCompra;
 	private double precoVenda;
 	private int quantidadeComprada; 
-	private UnidadesMedida unidadeMedida;
+	private String unidadeMedida;
 	
 	public ProdutoComprado() {
 	}
 	
-	public ProdutoComprado(int codBarras, String descricao, double precoCompra, double precoVenda, int quantidadeComprada, UnidadesMedida unidadeMedida) {
+	public ProdutoComprado(int codBarras, String descricao, double precoCompra, double precoVenda, int quantidadeComprada, String unidadeMedida) {
 		this.codBarras = codBarras;
 		this.descricao = descricao;
 		this.precoCompra = precoCompra;
@@ -62,18 +60,13 @@ public class ProdutoComprado {
 		this.quantidadeComprada = quantidadeComprada;
 	}
 
-	public UnidadesMedida getUnidadeMedida() {
+	public String getUnidadeMedida() {
 		return unidadeMedida;
 	}
 
-	public void setUnidadeMedida(UnidadesMedida unidadeMedida) {
+	public void setUnidadeMedida(String unidadeMedida) {
 		this.unidadeMedida = unidadeMedida;
 	}
-
-	@Override
-	public String toString() {
-		return "ProdutoComprado [codBarras=" + codBarras + ", descricao=" + descricao + ", precoCompra=" + precoCompra
-				+ ", precoVenda=" + precoVenda + ", quantidadeComprada=" + quantidadeComprada + ", unidadeMedida="
-				+ unidadeMedida + "]";
-	}
+	
+	
 }
