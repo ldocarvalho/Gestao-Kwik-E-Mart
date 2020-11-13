@@ -1,15 +1,11 @@
 package model;
 
-import java.util.ArrayList;
-
 public class VendaDeProdutos {
 	private double totalCompra;
 	private double totalPagamento;
 	private double troco;
 	private String formaPagamento;
-	
-	private ArrayList<Produto> produtosVendidos;
-	
+		
 	public VendaDeProdutos() {
 	}
 	
@@ -50,21 +46,5 @@ public class VendaDeProdutos {
 
 	public void setFormaPagamento(String formaPagamento) {
 		this.formaPagamento = formaPagamento;
-	}
-
-	public ArrayList<Produto> getProdutosVendidos() {
-		return produtosVendidos;
-	}
-
-	public void setProdutosVendidos(ArrayList<Produto> produtosVendidos) {
-		this.produtosVendidos = produtosVendidos;
-	}
-	
-	public void addProduto(Produto produto) {
-		this.produtosVendidos.add(produto);
-	}
-	
-	public void removeProduto(Produto produto) {
-		this.produtosVendidos.remove(produto);
 	}
  }

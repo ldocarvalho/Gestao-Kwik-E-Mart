@@ -33,6 +33,7 @@ public class MenuWindow {
 		JButton compraDeProdutos = new JButton("Compra de produtos");
 		compraDeProdutos.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				CompraDeProdutosWindow compra = new CompraDeProdutosWindow();
 			}
 		});
 		compraDeProdutos.setBounds(281, 250, 149, 34);
