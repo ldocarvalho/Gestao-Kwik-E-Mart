@@ -1,40 +1,23 @@
 package model;
 
-public class ProdutoVendido {
-	private int codBarras;
-	private int quantidade;
+import java.util.ArrayList;
+
+public class VendaDeProdutos {
 	private double totalCompra;
 	private double totalPagamento;
 	private double troco;
 	private String formaPagamento;
 	
-	public ProdutoVendido() {
-		
+	private ArrayList<Produto> produtosVendidos;
+	
+	public VendaDeProdutos() {
 	}
 	
-	public ProdutoVendido(int codBarras, int quantidade, double totalCompra, double totalPagamento, double troco, String formaPagamento) {
-		this.codBarras = codBarras;
-		this.quantidade = quantidade;
+	public VendaDeProdutos(double totalCompra, double totalPagamento, double troco, String formaPagamento) {
 		this.totalCompra = totalCompra;
 		this.totalPagamento = totalPagamento;
 		this.troco = troco;
 		this.formaPagamento = formaPagamento;
-	}
-
-	public int getCodBarras() {
-		return codBarras;
-	}
-
-	public void setCodBarras(int codBarras) {
-		this.codBarras = codBarras;
-	}
-
-	public int getQuantidade() {
-		return quantidade;
-	}
-
-	public void setQuantidade(int quantidade) {
-		this.quantidade = quantidade;
 	}
 
 	public double getTotalCompra() {
@@ -68,6 +51,20 @@ public class ProdutoVendido {
 	public void setFormaPagamento(String formaPagamento) {
 		this.formaPagamento = formaPagamento;
 	}
+
+	public ArrayList<Produto> getProdutosVendidos() {
+		return produtosVendidos;
+	}
+
+	public void setProdutosVendidos(ArrayList<Produto> produtosVendidos) {
+		this.produtosVendidos = produtosVendidos;
+	}
 	
+	public void addProduto(Produto produto) {
+		this.produtosVendidos.add(produto);
+	}
 	
-}
+	public void removeProduto(Produto produto) {
+		this.produtosVendidos.remove(produto);
+	}
+ }
