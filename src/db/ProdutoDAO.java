@@ -85,4 +85,38 @@ public class ProdutoDAO extends BancoDeDados {
 			return false;
 		}
 	}
+	
+	public static int numeroDeProdutosNoEstoque() {
+		int numProdutos = 0;
+		Statement statement;
+		
+		try {
+			statement = conexao.createStatement();
+			ResultSet resultSet = statement.executeQuery("SELECT * from produtos");
+			while(resultSet.next()) {
+				numProdutos += Integer.parseInt(resultSet.getString(3));
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
+		return numProdutos;
+	}
+	
+	public static double valorFinanceiroDoEstoque() {
+		double valorFinanceiro = 0;
+		Statement statement;
+		
+		try {
+			statement = conexao.createStatement();
+			ResultSet resultSet = statement.executeQuery("SELECT * from produtos");
+			while(resultSet.next()) {
+				valorFinanceiro += Integer.parseInt(resultSet.getString(3)) * Double.parseDouble(resultSet.getString(4));
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
+		return valorFinanceiro;
+	}
 }

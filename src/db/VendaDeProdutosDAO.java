@@ -34,4 +34,21 @@ public class VendaDeProdutosDAO extends BancoDeDados {
 			e.printStackTrace();
 		}
 	}
+	
+	public static double valorFinanceiroVendas() {
+		double valorFinanceiro = 0;
+		Statement statement;
+		
+		try {
+			statement = conexao.createStatement();
+			ResultSet resultSet = statement.executeQuery("SELECT * from vendas");
+			while(resultSet.next()) {
+				valorFinanceiro += Double.parseDouble(resultSet.getString(1));
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
+		return valorFinanceiro;
+	}
 }
