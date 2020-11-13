@@ -1,45 +1,22 @@
 package window;
 
-import java.awt.EventQueue;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JTextField;
+
+import db.UsuarioDAO;
+import model.Usuario;
 
 public class LoginWindow {
 
 	private JFrame frame;
-
-	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					LoginWindow window = new LoginWindow();
-					window.frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
-
-	/**
-	 * Create the application.
-	 */
+	
 	public LoginWindow() {
-		initialize();
-	}
-
-	/**
-	 * Initialize the contents of the frame.
-	 */
-	private void initialize() {
 		frame = new JFrame("Login");
 		frame.setLayout(null);
 		
@@ -64,15 +41,22 @@ public class LoginWindow {
 		JButton btnNewButton = new JButton("Entrar");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+				Usuario usuarioSalvo = UsuarioDAO.getUsuarioSalvo(textField.getText(), textField_1.getText());
+				if (usuarioSalvo != null) {
+					JOptionPane.showMessageDialog(null, "Seja bem-vinde de volta ao Kwik-E-Mart" + usuarioSalvo.getNomeUsuario() + "!");
+					frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+					MenuWindow menuWindow = new MenuWindow();
+				} else {
+					JOptionPane.showMessageDialog(null, "Usuário ainda não cadastrado no sistema");
+					frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+				}
 			}
-			
 		});
 		btnNewButton.setBounds(173, 262, 117, 29);
 		frame.getContentPane().add(btnNewButton);
 		
 		frame.setBounds(100, 100, 470, 360);
-		frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+		frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);	
+		frame.setVisible(true);
 	}
-
 }

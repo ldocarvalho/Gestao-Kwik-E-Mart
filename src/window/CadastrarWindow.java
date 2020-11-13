@@ -4,7 +4,12 @@ import java.awt.EventQueue;
 
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JTextField;
+
+import db.UsuarioDAO;
+import model.Usuario;
+
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
@@ -15,33 +20,7 @@ public class CadastrarWindow {
 	private JTextField textField;
 	private JTextField textField_1;
 
-	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					CadastrarWindow window = new CadastrarWindow();
-					window.frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
-
-	/**
-	 * Create the application.
-	 */
 	public CadastrarWindow() {
-		initialize();
-	}
-
-	/**
-	 * Initialize the contents of the frame.
-	 */
-	private void initialize() {
 		frame = new JFrame("Cadastrar novo usuário");
 		frame.getContentPane().setLayout(null);
 		
@@ -66,7 +45,19 @@ public class CadastrarWindow {
 		JButton btnNewButton = new JButton("Cadastrar usuário");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+				Usuario usuario = UsuarioDAO.getUsuarioSalvo(textField.getText(), textField_1.getText());
+				if (usuario != null) {
+					JOptionPane.showMessageDialog(null, "Usuário já cadastrado no sistema.");
+				} else {
+					boolean usuarioCadastradoComSucesso = UsuarioDAO.cadastraUsuario(textField.getText(), textField_1.getText());
+					if (usuarioCadastradoComSucesso) {
+						JOptionPane.showMessageDialog(null, "Seja bem-vinde ao sistema Kwik-E-Mart!");
+						frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+					} else {
+						JOptionPane.showMessageDialog(null, "Falha ao cadastrar novo usuário no sistema. Tente novamente ou contate um administrador.");
+						frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+					}
+				}
 			}
 			
 		});
@@ -75,5 +66,6 @@ public class CadastrarWindow {
 		
 		frame.setBounds(100, 100, 470, 360);
 		frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+		frame.setVisible(true);
 	}
 }

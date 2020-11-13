@@ -3,6 +3,9 @@ package window;
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
+
+import db.BancoDeDados;
+
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
@@ -31,6 +34,7 @@ public class WelcomeWindow {
 	 * Create the application.
 	 */
 	public WelcomeWindow() {
+		BancoDeDados bancoDeDados = new BancoDeDados();
 		initialize();
 	}
 
@@ -44,7 +48,7 @@ public class WelcomeWindow {
 		JButton btnNewButton = new JButton("Entrar com usuário");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				LoginWindow.main(null);
+				LoginWindow loginWindow = new LoginWindow();
 			}
 		});
 		
@@ -54,7 +58,7 @@ public class WelcomeWindow {
 		JButton btnNewButton_1 = new JButton("Cadastrar novo usuário");
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				CadastrarWindow.main(null);
+				CadastrarWindow cadastrarWindow = new CadastrarWindow();
 			}
 		});
 		
