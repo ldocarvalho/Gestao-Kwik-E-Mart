@@ -46,6 +46,7 @@ public class MenuWindow {
 		JButton financeiro = new JButton("Financeiro");
 		financeiro.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				FinanceiroWindow financeiro = new FinanceiroWindow();
 			}
 		});
 		financeiro.setBounds(522, 250, 149, 34);

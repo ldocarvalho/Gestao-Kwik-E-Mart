@@ -10,7 +10,7 @@ public class ProdutoDAO extends BancoDeDados {
 		Statement statement;
 		try {
 			statement = conexao.createStatement();
-			ResultSet resultSet = statement.executeQuery("SELECT * FROM produtos WHERE codBarras='" + codBarras + "'");
+			ResultSet resultSet = statement.executeQuery("SELECT * FROM produtos WHERE cod_barras='" + codBarras + "'");
 			if (resultSet.next()) {
 				return true;
 			} else {
@@ -54,10 +54,10 @@ public class ProdutoDAO extends BancoDeDados {
 		Statement statement;
 		try {
 			statement = conexao.createStatement();
-			ResultSet resultSet = statement.executeQuery("SELECT * FROM produtos WHERE codBarras='" + codBarras + "'");
+			ResultSet resultSet = statement.executeQuery("SELECT * FROM produtos WHERE cod_barras='" + codBarras + "'");
 			if (resultSet.next()) {
 				int novaQuantidade = Integer.parseInt(resultSet.getString(3)) + quantidade;
-				statement.executeUpdate("UPDATE produtos SET quantidade='" + novaQuantidade + "' WHERE cod_barras='" + codBarras + "')");
+				statement.executeUpdate("UPDATE produtos SET quantidade='" + novaQuantidade + "' WHERE cod_barras='" + codBarras + "'");
 				return true;
 			} else {
 				return false;
@@ -72,10 +72,10 @@ public class ProdutoDAO extends BancoDeDados {
 		Statement statement;
 		try {
 			statement = conexao.createStatement();
-			ResultSet resultSet = statement.executeQuery("SELECT * FROM produtos WHERE codBarras='" + codBarras + "'");
+			ResultSet resultSet = statement.executeQuery("SELECT * FROM produtos WHERE cod_barras='" + codBarras + "'");
 			if (resultSet.next()) {
 				int novaQuantidade = Integer.parseInt(resultSet.getString(3)) + quantidade;
-				statement.executeUpdate("UPDATE produtos SET quantidade='" + novaQuantidade + "' WHERE cod_barras='" + codBarras + "')");
+				statement.executeUpdate("UPDATE produtos SET quantidade='" + novaQuantidade + "' WHERE cod_barras='" + codBarras + "'");
 				return true;
 			} else {
 				return false;

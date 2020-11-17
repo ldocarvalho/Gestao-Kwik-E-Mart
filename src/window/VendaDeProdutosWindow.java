@@ -77,7 +77,7 @@ public class VendaDeProdutosWindow {
 		JButton btnNewButton_1 = new JButton("Adicionar novo produto");
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				Produto produto = new Produto(codBarras.getText(), descricao.getText(), Integer.parseInt(quantidade.getText()), Integer.parseInt(preco.getText()));
+				Produto produto = new Produto(codBarras.getText(), descricao.getText(), Integer.parseInt(quantidade.getText()), Double.parseDouble(preco.getText()));
 				produtos.add(produto);
 								
 				codBarras.setText("");

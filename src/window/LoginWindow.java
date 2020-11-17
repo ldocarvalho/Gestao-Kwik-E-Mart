@@ -11,14 +11,16 @@ import javax.swing.JTextField;
 
 import db.UsuarioDAO;
 import model.Usuario;
+import javax.swing.JPasswordField;
 
 public class LoginWindow {
 
 	private JFrame frame;
+	private JPasswordField passwordField;
 	
 	public LoginWindow() {
 		frame = new JFrame("Login");
-		frame.setLayout(null);
+		frame.getContentPane().setLayout(null);
 		
 		JLabel lblNewLabel = new JLabel("Nome de usuário");
 		lblNewLabel.setBounds(71, 160, 107, 16);
@@ -43,7 +45,7 @@ public class LoginWindow {
 			public void actionPerformed(ActionEvent e) {
 				Usuario usuarioSalvo = UsuarioDAO.getUsuarioSalvo(textField.getText(), textField_1.getText());
 				if (usuarioSalvo != null) {
-					JOptionPane.showMessageDialog(null, "Seja bem-vinde de volta ao Kwik-E-Mart" + usuarioSalvo.getNomeUsuario() + "!");
+					JOptionPane.showMessageDialog(null, "Seja bem-vinde de volta ao Kwik-E-Mart!");
 					frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 					MenuWindow menuWindow = new MenuWindow();
 				} else {
@@ -54,6 +56,7 @@ public class LoginWindow {
 		});
 		btnNewButton.setBounds(173, 262, 117, 29);
 		frame.getContentPane().add(btnNewButton);
+		
 		
 		frame.setBounds(100, 100, 470, 360);
 		frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);	

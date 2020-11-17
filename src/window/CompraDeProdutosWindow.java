@@ -77,7 +77,7 @@ public class CompraDeProdutosWindow {
 		JButton btnNewButton_1 = new JButton("Adicionar novo produto");
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				Produto produto = new Produto(codBarras.getText(), descricao.getText(), Integer.parseInt(quantidade.getText()), Integer.parseInt(precoCompra.getText()));
+				Produto produto = new Produto(codBarras.getText(), descricao.getText(), Integer.parseInt(quantidade.getText()), Double.parseDouble(precoCompra.getText()));
 				produtos.add(produto);
 								
 				codBarras.setText("");
@@ -99,7 +99,7 @@ public class CompraDeProdutosWindow {
 					} else {
 						ProdutoDAO.adicionaProdutoNoEstoque(produtoComprado);
 					}
-					totalCompra += produtoComprado.getPreco();
+					totalCompra += produtoComprado.getPreco() * produtoComprado.getQuantidade();
 				}
 				
 				CompraDeProdutos compra = new CompraDeProdutos(totalCompra);
