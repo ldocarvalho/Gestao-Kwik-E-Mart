@@ -1,11 +1,14 @@
 package window;
 
+import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.Icon;
 
 public class MenuWindow {
 
@@ -14,12 +17,13 @@ public class MenuWindow {
 	public MenuWindow() {
 		frame = new JFrame();
 		frame.getContentPane().setLayout(null);
+		frame.getContentPane().setBackground(new Color(51,13,160));
 		
-		JLabel lblNewLabel = new JLabel("New label");
-		lblNewLabel.setBounds(88, 201, 61, 16);
+		JLabel lblNewLabel = new JLabel(new ImageIcon(this.getClass().getResource("/icone-menu-venda.png")));
+		lblNewLabel.setBounds(78, 157, 93, 81);
 		frame.getContentPane().add(lblNewLabel);
 		
-		JButton vendaDeProdutos = new JButton("Venda de produtos");
+		JButton vendaDeProdutos = new JButton(new ImageIcon(this.getClass().getResource("/botao-menu-venda.png")));
 		vendaDeProdutos.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				VendaDeProdutosWindow venda = new VendaDeProdutosWindow();
@@ -28,33 +32,25 @@ public class MenuWindow {
 		vendaDeProdutos.setBounds(48, 250, 149, 34);
 		frame.getContentPane().add(vendaDeProdutos);
 		
-		JButton compraDeProdutos = new JButton("Compra de produtos");
+		JButton compraDeProdutos = new JButton(new ImageIcon(this.getClass().getResource("/botao-menu-compra.png")));
 		compraDeProdutos.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				CompraDeProdutosWindow compra = new CompraDeProdutosWindow();
 			}
 		});
-		compraDeProdutos.setBounds(281, 250, 149, 34);
+		compraDeProdutos.setBounds(524, 250, 149, 34);
 		frame.getContentPane().add(compraDeProdutos);
 		
-		JLabel lblNewLabel_1 = new JLabel("New label");
-		lblNewLabel_1.setBounds(321, 201, 61, 16);
-		frame.getContentPane().add(lblNewLabel_1);
-		
-		JButton financeiro = new JButton("Financeiro");
+		JButton financeiro = new JButton(new ImageIcon(this.getClass().getResource("/botao-menu-financeiro.png")));
 		financeiro.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				FinanceiroWindow financeiro = new FinanceiroWindow();
 			}
 		});
-		financeiro.setBounds(522, 250, 149, 34);
+		financeiro.setBounds(280, 250, 149, 34);
 		frame.getContentPane().add(financeiro);
 		
-		JLabel lblNewLabel_2 = new JLabel("New label");
-		lblNewLabel_2.setBounds(562, 201, 61, 16);
-		frame.getContentPane().add(lblNewLabel_2);
-		
-		JButton relatorioVendas = new JButton("Relatório de vendas");
+		JButton relatorioVendas = new JButton(new ImageIcon(this.getClass().getResource("/botao-menu-relatoriodevendas.png")));
 		relatorioVendas.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				RelatorioDeVendasWindow relatorioDeVendas = new RelatorioDeVendasWindow();
@@ -63,11 +59,7 @@ public class MenuWindow {
 		relatorioVendas.setBounds(166, 403, 149, 34);
 		frame.getContentPane().add(relatorioVendas);
 		
-		JLabel lblNewLabel_1_1 = new JLabel("New label");
-		lblNewLabel_1_1.setBounds(206, 354, 61, 16);
-		frame.getContentPane().add(lblNewLabel_1_1);
-		
-		JButton relatorioCompras = new JButton("Relatório de compras");
+		JButton relatorioCompras = new JButton(new ImageIcon(this.getClass().getResource("/botao-menu-relatoriocompras.png")));
 		relatorioCompras.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				RelatorioDeComprasWindow relatorioDeCompras = new RelatorioDeComprasWindow();
@@ -76,9 +68,25 @@ public class MenuWindow {
 		relatorioCompras.setBounds(406, 403, 149, 34);
 		frame.getContentPane().add(relatorioCompras);
 		
-		JLabel lblNewLabel_1_1_1 = new JLabel("New label");
-		lblNewLabel_1_1_1.setBounds(446, 354, 61, 16);
-		frame.getContentPane().add(lblNewLabel_1_1_1);
+		JLabel lblNewLabel_3 = new JLabel(new ImageIcon(this.getClass().getResource("/logopequena.png")));
+		lblNewLabel_3.setBounds(199, 41, 331, 105);
+		frame.getContentPane().add(lblNewLabel_3);
+		
+		JLabel lblNewLabel_1 = new JLabel(new ImageIcon(this.getClass().getResource("/icone-menu-financeiro.png")));
+		lblNewLabel_1.setBounds(313, 157, 93, 81);
+		frame.getContentPane().add(lblNewLabel_1);
+		
+		JLabel lblNewLabel_2 = new JLabel(new ImageIcon(this.getClass().getResource("/icone-menu-compra.png")));
+		lblNewLabel_2.setBounds(557, 157, 93, 81);
+		frame.getContentPane().add(lblNewLabel_2);
+		
+		JLabel lblNewLabel_4 = new JLabel(new ImageIcon(this.getClass().getResource("/icone-menu-relatoriodevendas.png")));
+		lblNewLabel_4.setBounds(195, 310, 93, 81);
+		frame.getContentPane().add(lblNewLabel_4);
+		
+		JLabel lblNewLabel_5 = new JLabel(new ImageIcon(this.getClass().getResource("/icone-menu-relatoriocompras.png")));
+		lblNewLabel_5.setBounds(437, 310, 93, 81);
+		frame.getContentPane().add(lblNewLabel_5);
 		
 		frame.setBounds(100, 100, 735, 525);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

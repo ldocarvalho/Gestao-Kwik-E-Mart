@@ -1,10 +1,12 @@
 package window;
 
 import java.awt.BorderLayout;
+import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
 
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
@@ -33,6 +35,7 @@ public class VendaFinalizadaWindow {
 		frame.getContentPane().setLayout(null);
 		frame.setBounds(100, 100, 735, 525);
 		frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+		frame.getContentPane().setBackground(new Color(51,13,160));
 		
 		JLabel label = new JLabel("New label");
 		frame.getContentPane().add(label, BorderLayout.WEST);
@@ -83,15 +86,20 @@ public class VendaFinalizadaWindow {
 		comboBox.setBounds(189, 358, 269, 27);
 		frame.getContentPane().add(comboBox);
 		
-		JButton btnNewButton = new JButton("Finalizar venda");
+		JButton btnNewButton = new JButton(new ImageIcon(this.getClass().getResource("/botao-finalizarvenda.png")));
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				VendaDeProdutos vendaFinalizada = new VendaDeProdutos(soma, Double.parseDouble(totalPagamento.getText()), Double.parseDouble(troco.getText()), comboBox.getItemAt(0));
 				VendaDeProdutosDAO.adicionaVenda(vendaFinalizada);
+				MenuWindow menuWindow = new MenuWindow();
 			}
 		});
 		btnNewButton.setBounds(278, 433, 180, 29);
 		frame.getContentPane().add(btnNewButton);
+		
+		JLabel lblNewLabel_5 = new JLabel(new ImageIcon(this.getClass().getResource("/icone.png")));
+		lblNewLabel_5.setBounds(6, 23, 113, 88);
+		frame.getContentPane().add(lblNewLabel_5);
 		
 		frame.setVisible(true);
 

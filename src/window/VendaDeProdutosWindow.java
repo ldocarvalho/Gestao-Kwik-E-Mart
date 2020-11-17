@@ -1,9 +1,11 @@
 package window;
 
+import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
 
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -25,6 +27,7 @@ public class VendaDeProdutosWindow {
 	public VendaDeProdutosWindow() {
 		frame = new JFrame("Venda de Produtos");
 		frame.getContentPane().setLayout(null);
+		frame.getContentPane().setBackground(new Color(51,13,160));
 		
 		JLabel lblNewLabel = new JLabel("Adicione nos campos abaixo as informações de cada produto vendido.");
 		lblNewLabel.setBounds(29, 164, 668, 29);
@@ -61,7 +64,7 @@ public class VendaDeProdutosWindow {
 		frame.getContentPane().add(quantidade);
 		quantidade.setColumns(10);
 		
-		JButton btnNewButton = new JButton("Finalizar venda");
+		JButton btnNewButton = new JButton(new ImageIcon(this.getClass().getResource("/botao-finalizarvenda.png")));
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				for(Produto produtoVendido : produtos) {
@@ -74,7 +77,7 @@ public class VendaDeProdutosWindow {
 		btnNewButton.setBounds(409, 418, 214, 29);
 		frame.getContentPane().add(btnNewButton);
 		
-		JButton btnNewButton_1 = new JButton("Adicionar novo produto");
+		JButton btnNewButton_1 = new JButton(new ImageIcon(this.getClass().getResource("/botao-adicionarproduto.png")));
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				Produto produto = new Produto(codBarras.getText(), descricao.getText(), Integer.parseInt(quantidade.getText()), Double.parseDouble(preco.getText()));
@@ -97,6 +100,10 @@ public class VendaDeProdutosWindow {
 		JLabel quantidadeLabel_1 = new JLabel("Preço");
 		quantidadeLabel_1.setBounds(409, 228, 141, 16);
 		frame.getContentPane().add(quantidadeLabel_1);
+		
+		JLabel lblNewLabel_2 = new JLabel(new ImageIcon(this.getClass().getResource("/icone.png")));
+		lblNewLabel_2.setBounds(6, 23, 113, 88);
+		frame.getContentPane().add(lblNewLabel_2);
 		
 		frame.setBounds(100, 100, 735, 525);
 		frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);

@@ -1,8 +1,10 @@
 package window;
 
+import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -17,10 +19,12 @@ public class CadastrarWindow {
 	private JFrame frame;
 	private JTextField textField;
 	private JTextField textField_1;
+	private JLabel lblNewLabel_2;
 
 	public CadastrarWindow() {
 		frame = new JFrame("Cadastrar novo usuário");
 		frame.getContentPane().setLayout(null);
+		frame.getContentPane().setBackground(new Color(51,13,160));
 		
 		JLabel lblNewLabel = new JLabel("Nome de usuário");
 		lblNewLabel.setBounds(71, 160, 107, 16);
@@ -40,7 +44,7 @@ public class CadastrarWindow {
 		textField_1.setBounds(211, 155, 222, 26);
 		frame.getContentPane().add(textField_1);
 		
-		JButton btnNewButton = new JButton("Cadastrar usuário");
+		JButton btnNewButton = new JButton(new ImageIcon(this.getClass().getResource("/botao-cadastrar.png")));
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				Usuario usuario = UsuarioDAO.getUsuarioSalvo(textField.getText(), textField_1.getText());
@@ -62,6 +66,10 @@ public class CadastrarWindow {
 		});
 		btnNewButton.setBounds(141, 262, 170, 29);
 		frame.getContentPane().add(btnNewButton);
+		
+		lblNewLabel_2 = new JLabel(new ImageIcon(this.getClass().getResource("/logopequena.png")));
+		lblNewLabel_2.setBounds(92, 25, 270, 108);
+		frame.getContentPane().add(lblNewLabel_2);
 		
 		frame.setBounds(100, 100, 470, 360);
 		frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);

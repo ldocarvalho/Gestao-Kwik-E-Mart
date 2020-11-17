@@ -74,7 +74,7 @@ public class ProdutoDAO extends BancoDeDados {
 			statement = conexao.createStatement();
 			ResultSet resultSet = statement.executeQuery("SELECT * FROM produtos WHERE cod_barras='" + codBarras + "'");
 			if (resultSet.next()) {
-				int novaQuantidade = Integer.parseInt(resultSet.getString(3)) + quantidade;
+				int novaQuantidade = Integer.parseInt(resultSet.getString(3)) - quantidade;
 				statement.executeUpdate("UPDATE produtos SET quantidade='" + novaQuantidade + "' WHERE cod_barras='" + codBarras + "'");
 				return true;
 			} else {

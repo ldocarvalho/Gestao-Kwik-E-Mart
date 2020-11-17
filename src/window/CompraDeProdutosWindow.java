@@ -1,10 +1,12 @@
 package window;
 
 
+import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
 
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -29,6 +31,7 @@ public class CompraDeProdutosWindow {
 	public CompraDeProdutosWindow() {
 		frame = new JFrame();
 		frame.getContentPane().setLayout(null);
+		frame.getContentPane().setBackground(new Color(51,13,160));
 		
 		JLabel lblNewLabel_1 = new JLabel("Ao finalizar os produtos, finalize a compra.");
 		lblNewLabel_1.setBounds(31, 149, 668, 29);
@@ -74,7 +77,7 @@ public class CompraDeProdutosWindow {
 		quantidade.setBounds(411, 336, 86, 26);
 		frame.getContentPane().add(quantidade);
 		
-		JButton btnNewButton_1 = new JButton("Adicionar novo produto");
+		JButton btnNewButton_1 = new JButton(new ImageIcon(this.getClass().getResource("/botao-adicionarproduto.png")));
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				Produto produto = new Produto(codBarras.getText(), descricao.getText(), Integer.parseInt(quantidade.getText()), Double.parseDouble(precoCompra.getText()));
@@ -89,7 +92,7 @@ public class CompraDeProdutosWindow {
 		btnNewButton_1.setBounds(105, 432, 214, 29);
 		frame.getContentPane().add(btnNewButton_1);
 		
-		JButton btnNewButton = new JButton("Finalizar compra");
+		JButton btnNewButton = new JButton(new ImageIcon(this.getClass().getResource("/botao-finalizarcompra.png")));
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				double totalCompra = 0;
@@ -108,6 +111,10 @@ public class CompraDeProdutosWindow {
 				JOptionPane.showMessageDialog(null, "Uma compra foi adicionada ao estoque no valor de R$" + String.format("%.2f", totalCompra) + ".");
 			}
 		});
+		
+		JLabel lblNewLabel_3 = new JLabel(new ImageIcon(this.getClass().getResource("/icone.png")));
+		lblNewLabel_3.setBounds(6, 23, 113, 88);
+		frame.getContentPane().add(lblNewLabel_3);
 		
 		btnNewButton.setBounds(411, 432, 214, 29);
 		frame.getContentPane().add(btnNewButton);

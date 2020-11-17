@@ -1,10 +1,14 @@
 package window;
 
+import java.awt.BorderLayout;
+import java.awt.Color;
 import java.util.ArrayList;
 
+import javax.swing.ImageIcon;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JScrollPane;
 import javax.swing.JTable;
-import javax.swing.table.DefaultTableModel;
 
 import db.CompraDeProdutosDAO;
 import model.CompraDeProdutos;
@@ -12,50 +16,33 @@ import model.CompraDeProdutos;
 public class RelatorioDeComprasWindow {
 
 	private JFrame frame;
-	private JTable table;
 	private ArrayList<CompraDeProdutos> listaDeCompras;
 
 	public RelatorioDeComprasWindow() {
 		frame = new JFrame();
-		frame.getContentPane().setLayout(null);
+		frame.getContentPane().setBackground(new Color(51,13,160));
 		
 		listaDeCompras = CompraDeProdutosDAO.listaCompras();
 		
-		String[] columns = new String[] {
-	            "Id", "Total da Compra (R$)"
-	    };
+        String[] columns = {"Id da Compra", "Valor total da Compra (R$)"};
+
+		Object[][] data = new Object[listaDeCompras.size()][2];
 		
-//		Object[][] data = new Object[listaDeCompras.size()][2];
-//		
-//		for(CompraDeProdutos compra : listaDeCompras) {
-//			data
-//		}
-	       
-	    Object[][] data = new Object[][] {
-	            {1, 40.0},
-	            {2, 70.0},
-	            {3, 60.0 },
-	    };
-	         
-//	    final Class[] columnClass = new Class[] {
-//	            Integer.class, Double.class
-//	    };
-//	    
-//	    DefaultTableModel model = new DefaultTableModel(data, columns) {
-//			@Override
-//	        public boolean isCellEditable(int row, int column) {
-//	                return false;
-//	        }
-//	        
-//	    	@Override
-//	        public Class<?> getColumnClass(int columnIndex) {
-//	                return columnClass[columnIndex];
-//	        }
-//	    };
+		for(int i=0; i<listaDeCompras.size(); i++) {
+			data[i][0] = i+1;
+			data[i][1] = listaDeCompras.get(i).getTotalCompra();
+		}
 		
-		table = new JTable(data, columns);
-		table.setBounds(33, 446, 642, -309);
-		frame.getContentPane().add(table);
+		JLabel lblNewLabel_3 = new JLabel(new ImageIcon(this.getClass().getResource("/icone.png")));
+		lblNewLabel_3.setBounds(6, 23, 113, 88);
+		frame.getContentPane().add(lblNewLabel_3, BorderLayout.NORTH);
+		
+		JTable table = new JTable(data, columns);
+		JScrollPane scrollPane = new JScrollPane(table);
+
+		frame.getContentPane().setLayout(new BorderLayout());
+		frame.getContentPane().add(scrollPane, BorderLayout.CENTER);
+		
 		frame.setBounds(100, 100, 735, 525);
 		frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		frame.setVisible(true);
