@@ -1,7 +1,9 @@
 package window;
 
-import java.awt.EventQueue;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
+import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
@@ -9,10 +11,6 @@ import javax.swing.JTextField;
 
 import db.UsuarioDAO;
 import model.Usuario;
-
-import javax.swing.JButton;
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
 
 public class CadastrarWindow {
 
@@ -53,6 +51,7 @@ public class CadastrarWindow {
 					if (usuarioCadastradoComSucesso) {
 						JOptionPane.showMessageDialog(null, "Seja bem-vinde ao sistema Kwik-E-Mart!");
 						frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+						MenuWindow menuWindow = new MenuWindow();
 					} else {
 						JOptionPane.showMessageDialog(null, "Falha ao cadastrar novo usuário no sistema. Tente novamente ou contate um administrador.");
 						frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
