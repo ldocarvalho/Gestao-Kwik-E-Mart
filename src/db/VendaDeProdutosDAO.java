@@ -3,6 +3,7 @@ package db;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
 
 import model.VendaDeProdutos;
 
@@ -22,17 +23,21 @@ public class VendaDeProdutosDAO extends BancoDeDados {
 		}
 	}
 	
-	public static void listaVendas() {
-		Statement statement;
+	public static ArrayList<VendaDeProdutos> listaVendas() {
+		ArrayList<VendaDeProdutos> listaDeVendas = new ArrayList<VendaDeProdutos>();
+ 		Statement statement;
 		try {
 			statement = conexao.createStatement();
 			ResultSet resultSet = statement.executeQuery("SELECT * FROM vendas"); 
 			while (resultSet.next()) {
-				System.out.println("");
+				VendaDeProdutos venda = new VendaDeProdutos(Double.parseDouble(resultSet.getString(1)), Double.parseDouble(resultSet.getString(2)), Double.parseDouble(resultSet.getString(3)), resultSet.getString(4));
+				listaDeVendas.add(venda);
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
+		
+		return listaDeVendas;
 	}
 	
 	public static double valorFinanceiroVendas() {

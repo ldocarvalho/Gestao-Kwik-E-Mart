@@ -7,8 +7,6 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 
-import model.VendaDeProdutos;
-
 public class MenuWindow {
 
 	private JFrame frame;
@@ -59,6 +57,7 @@ public class MenuWindow {
 		JButton relatorioVendas = new JButton("Relatório de vendas");
 		relatorioVendas.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				RelatorioDeVendasWindow relatorioDeVendas = new RelatorioDeVendasWindow();
 			}
 		});
 		relatorioVendas.setBounds(166, 403, 149, 34);
@@ -71,6 +70,7 @@ public class MenuWindow {
 		JButton relatorioCompras = new JButton("Relatório de compras");
 		relatorioCompras.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				RelatorioDeComprasWindow relatorioDeCompras = new RelatorioDeComprasWindow();
 			}
 		});
 		relatorioCompras.setBounds(406, 403, 149, 34);
