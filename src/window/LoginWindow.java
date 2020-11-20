@@ -25,22 +25,22 @@ public class LoginWindow {
 		frame.getContentPane().setLayout(null);
 		frame.getContentPane().setBackground(new Color(51,13,160));
 		
-		JLabel lblNewLabel = new JLabel("Nome de usuário");
-		lblNewLabel.setBounds(71, 160, 107, 16);
+		JLabel lblNewLabel = new JLabel(new ImageIcon(this.getClass().getResource("/label-nomeusuario.png")));
+		lblNewLabel.setBounds(71, 165, 132, 16);
 		frame.getContentPane().add(lblNewLabel);
 		
-		JLabel lblNewLabel_1 = new JLabel("Senha");
-		lblNewLabel_1.setBounds(71, 201, 61, 16);
+		JLabel lblNewLabel_1 = new JLabel(new ImageIcon(this.getClass().getResource("/label-senha.png")));
+		lblNewLabel_1.setBounds(69, 200, 61, 16);
 		frame.getContentPane().add(lblNewLabel_1);
 		
 		JTextField textField = new JTextField();
-		textField.setBounds(211, 196, 222, 26);
+		textField.setBounds(215, 196, 222, 26);
 		frame.getContentPane().add(textField);
 		textField.setColumns(10);
 		
 		JTextField textField_1 = new JTextField();
 		textField_1.setColumns(10);
-		textField_1.setBounds(211, 155, 222, 26);
+		textField_1.setBounds(215, 158, 222, 26);
 		frame.getContentPane().add(textField_1);
 		
 		JButton btnNewButton = new JButton(new ImageIcon(this.getClass().getResource("/botao-entrar.png")));

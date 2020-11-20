@@ -40,28 +40,28 @@ public class VendaFinalizadaWindow {
 		JLabel label = new JLabel("New label");
 		frame.getContentPane().add(label, BorderLayout.WEST);
 		
-		JLabel lblNewLabel_1 = new JLabel("Ao finalizar os produtos, conclua o processo.");
-		lblNewLabel_1.setBounds(30, 161, 668, 29);
+		JLabel lblNewLabel_1 = new JLabel(new ImageIcon(this.getClass().getResource("/label-pagamento-sub1.png")));
+		lblNewLabel_1.setBounds(16, 164, 534, 29);
 		frame.getContentPane().add(lblNewLabel_1);
 		
-		JLabel lblNewLabel = new JLabel("Adicione nos campos abaixo as informações da venda realizada.");
-		lblNewLabel.setBounds(30, 131, 668, 29);
+		JLabel lblNewLabel = new JLabel(new ImageIcon(this.getClass().getResource("/label-pagamento-sub2.png")));
+		lblNewLabel.setBounds(16, 134, 326, 29);
 		frame.getContentPane().add(lblNewLabel);
 		
-		JLabel lblNewLabel_2 = new JLabel("Preço total");
-		lblNewLabel_2.setBounds(30, 226, 109, 16);
+		JLabel lblNewLabel_2 = new JLabel(new ImageIcon(this.getClass().getResource("/label-precototal.png")));
+		lblNewLabel_2.setBounds(47, 226, 84, 16);
 		frame.getContentPane().add(lblNewLabel_2);
 		
 		JLabel lblNewLabel_2_1 = new JLabel(String.format("%.2f", this.soma));
 		lblNewLabel_2_1.setBounds(189, 226, 102, 16);
 		frame.getContentPane().add(lblNewLabel_2_1);
 		
-		JLabel lblNewLabel_3 = new JLabel("Total do pagamento");
-		lblNewLabel_3.setBounds(31, 270, 135, 16);
+		JLabel lblNewLabel_3 = new JLabel(new ImageIcon(this.getClass().getResource("/label-valorpago.png")));
+		lblNewLabel_3.setBounds(47, 275, 119, 16);
 		frame.getContentPane().add(lblNewLabel_3);
 		
-		JLabel lblNewLabel_3_1 = new JLabel("Troco");
-		lblNewLabel_3_1.setBounds(31, 315, 135, 16);
+		JLabel lblNewLabel_3_1 = new JLabel(new ImageIcon(this.getClass().getResource("/label-troco.png")));
+		lblNewLabel_3_1.setBounds(47, 320, 77, 16);
 		frame.getContentPane().add(lblNewLabel_3_1);
 		
 		totalPagamento = new JTextField();
@@ -74,8 +74,8 @@ public class VendaFinalizadaWindow {
 		troco.setBounds(189, 310, 269, 26);
 		frame.getContentPane().add(troco);
 		
-		JLabel lblNewLabel_4 = new JLabel("Forma de pagamento");
-		lblNewLabel_4.setBounds(31, 362, 135, 16);
+		JLabel lblNewLabel_4 = new JLabel(new ImageIcon(this.getClass().getResource("/label-formadepagamento.png")));
+		lblNewLabel_4.setBounds(47, 362, 102, 16);
 		frame.getContentPane().add(lblNewLabel_4);
 		
 		JComboBox<String> comboBox = new JComboBox<String>();
@@ -100,6 +100,10 @@ public class VendaFinalizadaWindow {
 		JLabel lblNewLabel_5 = new JLabel(new ImageIcon(this.getClass().getResource("/icone.png")));
 		lblNewLabel_5.setBounds(6, 23, 113, 88);
 		frame.getContentPane().add(lblNewLabel_5);
+		
+		JLabel lblNewLabel_6 = new JLabel(new ImageIcon(this.getClass().getResource("/label-pagamento-titulo.png")));
+		lblNewLabel_6.setBounds(127, 37, 180, 59);
+		frame.getContentPane().add(lblNewLabel_6);
 		
 		frame.setVisible(true);
 

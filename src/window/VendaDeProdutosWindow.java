@@ -29,24 +29,24 @@ public class VendaDeProdutosWindow {
 		frame.getContentPane().setLayout(null);
 		frame.getContentPane().setBackground(new Color(51,13,160));
 		
-		JLabel lblNewLabel = new JLabel("Adicione nos campos abaixo as informações de cada produto vendido.");
-		lblNewLabel.setBounds(29, 164, 668, 29);
+		JLabel lblNewLabel = new JLabel(new ImageIcon(this.getClass().getResource("/label-venda-sub1.png")));
+		lblNewLabel.setBounds(27, 168, 474, 29);
 		frame.getContentPane().add(lblNewLabel);
 		
-		JLabel lblNewLabel_1 = new JLabel("Ao finalizar os produtos, finalize a venda.");
-		lblNewLabel_1.setBounds(29, 135, 668, 29);
+		JLabel lblNewLabel_1 = new JLabel(new ImageIcon(this.getClass().getResource("/label-venda-sub2.png")));
+		lblNewLabel_1.setBounds(16, 138, 301, 29);
 		frame.getContentPane().add(lblNewLabel_1);
 		
-		JLabel descricaoLabel = new JLabel("Descrição do produto");
-		descricaoLabel.setBounds(29, 228, 149, 16);
+		JLabel descricaoLabel = new JLabel(new ImageIcon(this.getClass().getResource("/label-descricao.png")));
+		descricaoLabel.setBounds(16, 228, 96, 16);
 		frame.getContentPane().add(descricaoLabel);
 		
-		JLabel codBarrasLabel = new JLabel("Código de barras");
-		codBarrasLabel.setBounds(29, 294, 149, 16);
+		JLabel codBarrasLabel = new JLabel(new ImageIcon(this.getClass().getResource("/label-codbarras.png")));
+		codBarrasLabel.setBounds(27, 294, 104, 16);
 		frame.getContentPane().add(codBarrasLabel);
 		
-		JLabel quantidadeLabel = new JLabel("Quantidade");
-		quantidadeLabel.setBounds(409, 294, 141, 16);
+		JLabel quantidadeLabel = new JLabel(new ImageIcon(this.getClass().getResource("/label-quantidade.png")));
+		quantidadeLabel.setBounds(409, 294, 86, 16);
 		frame.getContentPane().add(quantidadeLabel);
 		
 		descricao = new JTextField();
@@ -97,13 +97,17 @@ public class VendaDeProdutosWindow {
 		preco.setBounds(409, 256, 86, 26);
 		frame.getContentPane().add(preco);
 		
-		JLabel quantidadeLabel_1 = new JLabel("Preço");
-		quantidadeLabel_1.setBounds(409, 228, 141, 16);
+		JLabel quantidadeLabel_1 = new JLabel(new ImageIcon(this.getClass().getResource("/label-preco.png")));
+		quantidadeLabel_1.setBounds(409, 228, 81, 16);
 		frame.getContentPane().add(quantidadeLabel_1);
 		
 		JLabel lblNewLabel_2 = new JLabel(new ImageIcon(this.getClass().getResource("/icone.png")));
 		lblNewLabel_2.setBounds(6, 23, 113, 88);
 		frame.getContentPane().add(lblNewLabel_2);
+		
+		JLabel lblNewLabel_3 = new JLabel(new ImageIcon(this.getClass().getResource("/label-venda-titulo.png")));
+		lblNewLabel_3.setBounds(118, 34, 276, 66);
+		frame.getContentPane().add(lblNewLabel_3);
 		
 		frame.setBounds(100, 100, 735, 525);
 		frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);

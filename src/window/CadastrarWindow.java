@@ -26,11 +26,11 @@ public class CadastrarWindow {
 		frame.getContentPane().setLayout(null);
 		frame.getContentPane().setBackground(new Color(51,13,160));
 		
-		JLabel lblNewLabel = new JLabel("Nome de usuário");
-		lblNewLabel.setBounds(71, 160, 107, 16);
+		JLabel lblNewLabel = new JLabel(new ImageIcon(this.getClass().getResource("/label-nomeusuario.png")));
+		lblNewLabel.setBounds(71, 160, 128, 16);
 		frame.getContentPane().add(lblNewLabel);
 		
-		JLabel lblNewLabel_1 = new JLabel("Senha");
+		JLabel lblNewLabel_1 = new JLabel(new ImageIcon(this.getClass().getResource("/label-senha.png")));
 		lblNewLabel_1.setBounds(71, 201, 61, 16);
 		frame.getContentPane().add(lblNewLabel_1);
 		
