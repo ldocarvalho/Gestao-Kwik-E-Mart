@@ -19,6 +19,7 @@ public class LoginWindow {
 
 	private JFrame frame;
 	private JPasswordField passwordField;
+	private JPasswordField passwordField_1;
 	
 	public LoginWindow() {
 		frame = new JFrame("Login");
@@ -42,7 +43,7 @@ public class LoginWindow {
 		textField_1.setColumns(10);
 		textField_1.setBounds(215, 158, 222, 26);
 		frame.getContentPane().add(textField_1);
-		
+				
 		JButton btnNewButton = new JButton(new ImageIcon(this.getClass().getResource("/botao-entrar.png")));
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {

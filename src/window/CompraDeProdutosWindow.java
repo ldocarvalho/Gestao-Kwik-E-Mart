@@ -33,20 +33,12 @@ public class CompraDeProdutosWindow {
 		frame.getContentPane().setLayout(null);
 		frame.getContentPane().setBackground(new Color(51,13,160));
 		
-		JLabel lblNewLabel_1 = new JLabel("Ao finalizar os produtos, finalize a compra.");
-		lblNewLabel_1.setBounds(31, 149, 668, 29);
-		frame.getContentPane().add(lblNewLabel_1);
-		
-		JLabel lblNewLabel = new JLabel("Adicione nos campos abaixo as informações de cada produto comprado.");
-		lblNewLabel.setBounds(31, 178, 668, 29);
-		frame.getContentPane().add(lblNewLabel);
-		
-		JLabel descricaoLabel = new JLabel("Descrição do produto");
-		descricaoLabel.setBounds(31, 242, 149, 16);
+		JLabel descricaoLabel = new JLabel(new ImageIcon(this.getClass().getResource("/label-descricao.png")));
+		descricaoLabel.setBounds(31, 242, 71, 16);
 		frame.getContentPane().add(descricaoLabel);
 		
-		JLabel quantidadeLabel_1 = new JLabel("Preço de compra");
-		quantidadeLabel_1.setBounds(411, 242, 141, 16);
+		JLabel quantidadeLabel_1 = new JLabel(new ImageIcon(this.getClass().getResource("/label-preco.png")));
+		quantidadeLabel_1.setBounds(411, 242, 71, 16);
 		frame.getContentPane().add(quantidadeLabel_1);
 		
 		descricao = new JTextField();
@@ -59,12 +51,12 @@ public class CompraDeProdutosWindow {
 		precoCompra.setBounds(411, 270, 86, 26);
 		frame.getContentPane().add(precoCompra);
 		
-		JLabel codBarrasLabel = new JLabel("Código de barras");
-		codBarrasLabel.setBounds(31, 308, 149, 16);
+		JLabel codBarrasLabel = new JLabel(new ImageIcon(this.getClass().getResource("/label-codbarras.png")));
+		codBarrasLabel.setBounds(31, 308, 97, 16);
 		frame.getContentPane().add(codBarrasLabel);
 		
-		JLabel quantidadeLabel = new JLabel("Quantidade");
-		quantidadeLabel.setBounds(411, 308, 141, 16);
+		JLabel quantidadeLabel = new JLabel(new ImageIcon(this.getClass().getResource("/label-quantidade.png")));
+		quantidadeLabel.setBounds(411, 308, 86, 16);
 		frame.getContentPane().add(quantidadeLabel);
 		
 		codBarras = new JTextField();
@@ -113,8 +105,21 @@ public class CompraDeProdutosWindow {
 		});
 		
 		JLabel lblNewLabel_3 = new JLabel(new ImageIcon(this.getClass().getResource("/icone.png")));
-		lblNewLabel_3.setBounds(6, 23, 113, 88);
+		lblNewLabel_3.setBounds(21, 23, 97, 77);
 		frame.getContentPane().add(lblNewLabel_3);
+		
+		JLabel lblNewLabel_4 = new JLabel(new ImageIcon(this.getClass().getResource("/label-compra-titulo.png")));
+		lblNewLabel_4.setBounds(118, 34, 276, 66);
+		frame.getContentPane().add(lblNewLabel_4);
+		
+		JLabel lblNewLabel_5 = new JLabel(new ImageIcon(this.getClass().getResource("/label-compra-sub1.png")));
+		lblNewLabel_5.setBounds(27, 168, 496, 29);
+		frame.getContentPane().add(lblNewLabel_5);
+		
+		JLabel lblNewLabel_6 = new JLabel(new ImageIcon(this.getClass().getResource("/label-compra-sub2.png")));
+		lblNewLabel_6.setBounds(16, 138, 301, 29);
+		frame.getContentPane().add(lblNewLabel_6);
+
 		
 		btnNewButton.setBounds(411, 432, 214, 29);
 		frame.getContentPane().add(btnNewButton);

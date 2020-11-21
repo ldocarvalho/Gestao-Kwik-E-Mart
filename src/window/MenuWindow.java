@@ -14,7 +14,7 @@ public class MenuWindow {
 	private JFrame frame;
 
 	public MenuWindow() {
-		frame = new JFrame();
+		frame = new JFrame("Menu");
 		frame.getContentPane().setLayout(null);
 		frame.getContentPane().setBackground(new Color(51,13,160));
 		
