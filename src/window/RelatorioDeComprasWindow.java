@@ -35,15 +35,6 @@ public class RelatorioDeComprasWindow {
 		}
 						
 		JTable table = new JTable(data, columns);
-//		
-//		JScrollPane scrollPane = new JScrollPane();
-//		scrollPane.setLayout(new BorderLayout());
-//		scrollPane.add(table, BorderLayout.CENTER);
-//		
-//		frame.getContentPane().add(scrollPane);
-//		
-//		frame.getContentPane().setLayout(new BorderLayout());
-//		frame.getContentPane().add(scrollPane, BorderLayout.CENTER);
 		
 		JLabel lblNewLabel = new JLabel(new ImageIcon(this.getClass().getResource("/icone.png")));
 		lblNewLabel.setBounds(6, 23, 113, 88);

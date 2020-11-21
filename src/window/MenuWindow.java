@@ -8,7 +8,6 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
-import javax.swing.Icon;
 
 public class MenuWindow {
 
@@ -56,7 +55,7 @@ public class MenuWindow {
 				RelatorioDeVendasWindow relatorioDeVendas = new RelatorioDeVendasWindow();
 			}
 		});
-		relatorioVendas.setBounds(166, 403, 149, 34);
+		relatorioVendas.setBounds(48, 403, 149, 34);
 		frame.getContentPane().add(relatorioVendas);
 		
 		JButton relatorioCompras = new JButton(new ImageIcon(this.getClass().getResource("/botao-menu-relatoriocompras.png")));
@@ -65,7 +64,7 @@ public class MenuWindow {
 				RelatorioDeComprasWindow relatorioDeCompras = new RelatorioDeComprasWindow();
 			}
 		});
-		relatorioCompras.setBounds(406, 403, 149, 34);
+		relatorioCompras.setBounds(524, 403, 149, 34);
 		frame.getContentPane().add(relatorioCompras);
 		
 		JLabel lblNewLabel_3 = new JLabel(new ImageIcon(this.getClass().getResource("/logopequena.png")));
@@ -81,12 +80,25 @@ public class MenuWindow {
 		frame.getContentPane().add(lblNewLabel_2);
 		
 		JLabel lblNewLabel_4 = new JLabel(new ImageIcon(this.getClass().getResource("/icone-menu-relatoriodevendas.png")));
-		lblNewLabel_4.setBounds(195, 310, 93, 81);
+		lblNewLabel_4.setBounds(77, 310, 93, 81);
 		frame.getContentPane().add(lblNewLabel_4);
 		
 		JLabel lblNewLabel_5 = new JLabel(new ImageIcon(this.getClass().getResource("/icone-menu-relatoriocompras.png")));
-		lblNewLabel_5.setBounds(437, 310, 93, 81);
+		lblNewLabel_5.setBounds(555, 310, 93, 81);
 		frame.getContentPane().add(lblNewLabel_5);
+		
+		JLabel lblNewLabel_5_1 = new JLabel(new ImageIcon(this.getClass().getResource("/icone-menu-estoque.png")));
+		lblNewLabel_5_1.setBounds(311, 310, 93, 81);
+		frame.getContentPane().add(lblNewLabel_5_1);
+		
+		JButton relatorioCompras_1 = new JButton(new ImageIcon(this.getClass().getResource("/botao-menu-estoque.png")));
+		relatorioCompras_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				RelatorioDeProdutosWindow relatorioDeProdutos = new RelatorioDeProdutosWindow();
+			}
+		});
+		relatorioCompras_1.setBounds(280, 403, 149, 34);
+		frame.getContentPane().add(relatorioCompras_1);
 		
 		frame.setBounds(100, 100, 735, 525);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

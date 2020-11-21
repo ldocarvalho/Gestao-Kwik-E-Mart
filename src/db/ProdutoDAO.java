@@ -1,7 +1,9 @@
 package db;
 
 import java.sql.*;
+import java.util.ArrayList;
 
+import model.CompraDeProdutos;
 import model.Produto;
 
 public class ProdutoDAO extends BancoDeDados {
@@ -37,17 +39,22 @@ public class ProdutoDAO extends BancoDeDados {
 		}
 	}
 	
-	public static void listaProdutosDoEstoque() {
+	public static ArrayList<Produto> listaProdutosNoEstoque() {
+		ArrayList<Produto> produtosNoEstoque = new ArrayList<Produto>();
+		
 		Statement statement;
 		try {
 			statement = conexao.createStatement();
 			ResultSet resultSet = statement.executeQuery("SELECT * FROM produtos"); 
 			while (resultSet.next()) {
-				System.out.println("");
+				Produto produto = new Produto(resultSet.getString(1), resultSet.getString(2), Integer.parseInt(resultSet.getString(3)), Double.parseDouble(resultSet.getString(4)));
+				produtosNoEstoque.add(produto);
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
+		
+		return produtosNoEstoque;
 	}
 	
 	public static boolean aumentaQuantidadeNoEstoque(String codBarras, int quantidade) {
