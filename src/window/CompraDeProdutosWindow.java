@@ -17,6 +17,7 @@ import db.CompraDeProdutosDAO;
 import db.ProdutoDAO;
 import model.CompraDeProdutos;
 import model.Produto;
+import javax.swing.Icon;
 
 public class CompraDeProdutosWindow {
 
@@ -25,6 +26,9 @@ public class CompraDeProdutosWindow {
 	private JTextField precoCompra;
 	private JTextField codBarras;
 	private JTextField quantidade;
+	private JTextField precoVenda;
+	
+	private double totalCompra = 0.0;
 	
 	private ArrayList<Produto> produtos = new ArrayList<Produto>();
 
@@ -37,8 +41,8 @@ public class CompraDeProdutosWindow {
 		descricaoLabel.setBounds(31, 242, 71, 16);
 		frame.getContentPane().add(descricaoLabel);
 		
-		JLabel quantidadeLabel_1 = new JLabel(new ImageIcon(this.getClass().getResource("/label-preco.png")));
-		quantidadeLabel_1.setBounds(411, 242, 71, 16);
+		JLabel quantidadeLabel_1 = new JLabel(new ImageIcon(this.getClass().getResource("/label-preco-compra.png")));
+		quantidadeLabel_1.setBounds(372, 242, 154, 16);
 		frame.getContentPane().add(quantidadeLabel_1);
 		
 		descricao = new JTextField();
@@ -48,7 +52,7 @@ public class CompraDeProdutosWindow {
 		
 		precoCompra = new JTextField();
 		precoCompra.setColumns(10);
-		precoCompra.setBounds(411, 270, 86, 26);
+		precoCompra.setBounds(372, 270, 123, 26);
 		frame.getContentPane().add(precoCompra);
 		
 		JLabel codBarrasLabel = new JLabel(new ImageIcon(this.getClass().getResource("/label-codbarras.png")));
@@ -56,7 +60,7 @@ public class CompraDeProdutosWindow {
 		frame.getContentPane().add(codBarrasLabel);
 		
 		JLabel quantidadeLabel = new JLabel(new ImageIcon(this.getClass().getResource("/label-quantidade.png")));
-		quantidadeLabel.setBounds(411, 308, 86, 16);
+		quantidadeLabel.setBounds(565, 242, 86, 16);
 		frame.getContentPane().add(quantidadeLabel);
 		
 		codBarras = new JTextField();
@@ -66,19 +70,32 @@ public class CompraDeProdutosWindow {
 		
 		quantidade = new JTextField();
 		quantidade.setColumns(10);
-		quantidade.setBounds(411, 336, 86, 26);
+		quantidade.setBounds(565, 270, 123, 26);
 		frame.getContentPane().add(quantidade);
+		
+		JLabel precoVendaLabel = new JLabel(new ImageIcon(this.getClass().getResource("/label-preco-venda.png")));
+		precoVendaLabel.setBounds(372, 308, 154, 16);
+		frame.getContentPane().add(precoVendaLabel);
+		
+		precoVenda = new JTextField();
+		precoVenda.setColumns(10);
+		precoVenda.setBounds(372, 336, 123, 26);
+		frame.getContentPane().add(precoVenda);
 		
 		JButton btnNewButton_1 = new JButton(new ImageIcon(this.getClass().getResource("/botao-adicionarproduto.png")));
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				Produto produto = new Produto(codBarras.getText(), descricao.getText(), Integer.parseInt(quantidade.getText()), Double.parseDouble(precoCompra.getText()));
+				Produto produto = new Produto(codBarras.getText(), descricao.getText(), Integer.parseInt(quantidade.getText()), Double.parseDouble(precoVenda.getText()));
 				produtos.add(produto);
+				
+				totalCompra += Double.parseDouble(precoCompra.getText()) * Integer.parseInt(quantidade.getText());
 								
 				codBarras.setText("");
 				descricao.setText("");
 				quantidade.setText("");
 				precoCompra.setText("");
+				precoVenda.setText("");
+				
 			}
 		});
 		btnNewButton_1.setBounds(105, 432, 214, 29);
@@ -87,14 +104,12 @@ public class CompraDeProdutosWindow {
 		JButton btnNewButton = new JButton(new ImageIcon(this.getClass().getResource("/botao-finalizarcompra.png")));
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				double totalCompra = 0;
 				for (Produto produtoComprado : produtos) {
 					if (ProdutoDAO.verificaSeProdutoEstaNoEstoque(produtoComprado.getCodBarras())) {
 						ProdutoDAO.aumentaQuantidadeNoEstoque(produtoComprado.getCodBarras(), produtoComprado.getQuantidade());
 					} else {
 						ProdutoDAO.adicionaProdutoNoEstoque(produtoComprado);
 					}
-					totalCompra += produtoComprado.getPreco() * produtoComprado.getQuantidade();
 				}
 				
 				CompraDeProdutos compra = new CompraDeProdutos(totalCompra);
@@ -123,6 +138,7 @@ public class CompraDeProdutosWindow {
 		
 		btnNewButton.setBounds(411, 432, 214, 29);
 		frame.getContentPane().add(btnNewButton);
+		
 		frame.setBounds(100, 100, 735, 525);
 		frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		frame.setVisible(true);

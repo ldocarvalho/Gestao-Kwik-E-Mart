@@ -47,7 +47,7 @@ public class RelatorioDeVendasWindow {
 		lblNewLabel_2.setBounds(118, 34, 124, 66);
 		frame.getContentPane().add(lblNewLabel_2);
 		
-		JLabel lblNewLabel_1 = new JLabel(new ImageIcon(this.getClass().getResource("/label-relatoriovendas-sub1.png")));
+		JLabel lblNewLabel_1 = new JLabel(new ImageIcon(this.getClass().getResource("/label-vendas-sub1.png")));
 		lblNewLabel_1.setBounds(6, 135, 699, 31);
 		frame.getContentPane().add(lblNewLabel_1);
 		

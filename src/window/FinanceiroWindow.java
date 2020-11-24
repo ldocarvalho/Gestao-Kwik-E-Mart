@@ -35,14 +35,17 @@ public class FinanceiroWindow {
 		frame.getContentPane().add(lblNewLabel_1_1);
 		
 		JLabel lblNewLabel_2 = new JLabel(ProdutoDAO.numeroDeProdutosNoEstoque() + " produtos");
+		lblNewLabel_2.setForeground(Color.WHITE);
 		lblNewLabel_2.setBounds(442, 222, 229, 16);
 		frame.getContentPane().add(lblNewLabel_2);
 		
 		JLabel lblNewLabel_2_1 = new JLabel("R$" + String.format("%.2f", ProdutoDAO.valorFinanceiroDoEstoque()));
+		lblNewLabel_2_1.setForeground(Color.WHITE);
 		lblNewLabel_2_1.setBounds(442, 267, 167, 16);
 		frame.getContentPane().add(lblNewLabel_2_1);
 		
 		JLabel lblNewLabel_2_1_1 = new JLabel("R$" + String.format("%.2f", this.lucroTotal));
+		lblNewLabel_2_1_1.setForeground(Color.WHITE);
 		lblNewLabel_2_1_1.setBounds(442, 312, 167, 16);
 		frame.getContentPane().add(lblNewLabel_2_1_1);
 		

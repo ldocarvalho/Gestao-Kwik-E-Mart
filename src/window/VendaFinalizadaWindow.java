@@ -32,6 +32,7 @@ public class VendaFinalizadaWindow {
 		}
 		
 		frame = new JFrame();
+		frame.getContentPane().setForeground(Color.WHITE);
 		frame.getContentPane().setLayout(null);
 		frame.setBounds(100, 100, 735, 525);
 		frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
@@ -53,6 +54,7 @@ public class VendaFinalizadaWindow {
 		frame.getContentPane().add(lblNewLabel_2);
 		
 		JLabel lblNewLabel_2_1 = new JLabel(String.format("%.2f", this.soma));
+		lblNewLabel_2_1.setForeground(Color.WHITE);
 		lblNewLabel_2_1.setBounds(189, 226, 102, 16);
 		frame.getContentPane().add(lblNewLabel_2_1);
 		
