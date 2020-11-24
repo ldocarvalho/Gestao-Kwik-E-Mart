@@ -89,7 +89,7 @@ public class VendaFinalizadaWindow {
 		JButton btnNewButton = new JButton(new ImageIcon(this.getClass().getResource("/botao-finalizarvenda.png")));
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				VendaDeProdutos vendaFinalizada = new VendaDeProdutos(soma, Double.parseDouble(totalPagamento.getText()), Double.parseDouble(troco.getText()), comboBox.getItemAt(0));
+				VendaDeProdutos vendaFinalizada = new VendaDeProdutos(soma, Double.parseDouble(totalPagamento.getText()), Double.parseDouble(troco.getText()), comboBox.getItemAt(comboBox.getSelectedIndex()));
 				VendaDeProdutosDAO.adicionaVenda(vendaFinalizada);
 				MenuWindow menuWindow = new MenuWindow();
 			}

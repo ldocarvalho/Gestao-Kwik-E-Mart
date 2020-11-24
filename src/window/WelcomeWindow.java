@@ -55,7 +55,7 @@ public class WelcomeWindow {
 			}
 		});
 		
-		btnNewButton.setBounds(311, 308, 157, 40);
+		btnNewButton.setBounds(304, 308, 157, 40);
 		frame.getContentPane().add(btnNewButton);
 		
 		JButton btnNewButton_1 = new JButton(new ImageIcon(this.getClass().getResource("/botao-cadastrarusuario.png")));
@@ -66,7 +66,7 @@ public class WelcomeWindow {
 		});
 		
 		
-		btnNewButton_1.setBounds(311, 364, 157, 40);
+		btnNewButton_1.setBounds(304, 366, 157, 40);
 		frame.getContentPane().add(btnNewButton_1);
 		
 		JLabel lblNewLabel = new JLabel(new ImageIcon(this.getClass().getResource("/logogrande.png")));

@@ -64,7 +64,7 @@ public class CadastrarWindow {
 			}
 			
 		});
-		btnNewButton.setBounds(141, 262, 170, 29);
+		btnNewButton.setBounds(168, 262, 117, 29);
 		frame.getContentPane().add(btnNewButton);
 		
 		lblNewLabel_2 = new JLabel(new ImageIcon(this.getClass().getResource("/logopequena.png")));

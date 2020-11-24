@@ -25,7 +25,7 @@ public class VendaDeProdutosWindow {
 	private ArrayList<Produto> produtos = new ArrayList<Produto>();
 	
 	public VendaDeProdutosWindow() {
-		frame = new JFrame("Venda de Produtos");
+		frame = new JFrame();
 		frame.getContentPane().setLayout(null);
 		frame.getContentPane().setBackground(new Color(51,13,160));
 		
