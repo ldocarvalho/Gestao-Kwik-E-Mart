@@ -9,6 +9,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
 import db.ProdutoDAO;
@@ -80,8 +81,12 @@ public class VendaDeProdutosWindow {
 		JButton btnNewButton_1 = new JButton(new ImageIcon(this.getClass().getResource("/botao-adicionarproduto.png")));
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				Produto produto = new Produto(codBarras.getText(), descricao.getText(), Integer.parseInt(quantidade.getText()), Double.parseDouble(preco.getText()));
-				produtos.add(produto);
+				if (ProdutoDAO.verificaSeProdutoEstaNoEstoque(codBarras.getText())) {
+					Produto produto = new Produto(codBarras.getText(), descricao.getText(), Integer.parseInt(quantidade.getText()), Double.parseDouble(preco.getText()));
+					produtos.add(produto);
+				} else {
+					JOptionPane.showMessageDialog(null, "Produto não cadastrado no estoque. Verifique se o código de barras inserido está correto.");
+				}
 								
 				codBarras.setText("");
 				descricao.setText("");
