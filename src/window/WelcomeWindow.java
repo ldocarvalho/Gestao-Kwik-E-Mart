@@ -1,3 +1,9 @@
+/*
+* Classe WelcomeWindow - Representa a janela de Boas-vindas na aplicação
+* @author Lucas Carvalho 
+* @version 1.0, 2020-11-12
+*/
+
 package window;
 
 import java.awt.Color;
@@ -14,10 +20,11 @@ import db.BancoDeDados;
 
 public class WelcomeWindow {
 
-	private JFrame frame;
+	private JFrame frame; /** Frame principal */
 
-	/**
-	 * Launch the application.
+	/*
+	 * Inicializa o programa
+	 * @param args args
 	 */
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
@@ -32,16 +39,17 @@ public class WelcomeWindow {
 		});
 	}
 
-	/**
-	 * Create the application.
-	 */
+	/*
+	* Construtor da classe.
+	*/
 	public WelcomeWindow() {
 		BancoDeDados bancoDeDados = new BancoDeDados();
 		initialize();
 	}
 
 	/**
-	 * Initialize the contents of the frame.
+	 * Incicializa a primeira janela 
+	 * @return void 
 	 */
 	private void initialize() {
 		frame = new JFrame("Bem vindo ao sistema Kwik-E-Mart");

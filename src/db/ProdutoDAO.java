@@ -1,3 +1,9 @@
+/*
+* Classe ProdutoDAO - Representa a manipulação dos obj Produto no BD
+* @author Lucas Carvalho 
+* @version 1.0, 2020-11-12
+*/
+
 package db;
 
 import java.sql.*;
@@ -8,6 +14,11 @@ import model.Produto;
 
 public class ProdutoDAO extends BancoDeDados {
 	
+	/**
+	 * Verifica se o produto esta no estoque
+	 * @param codBarras codigo de barras do produto 
+	 * @return boolean resultado da verificacao
+	 */
 	public static boolean verificaSeProdutoEstaNoEstoque(String codBarras) {
 		Statement statement;
 		try {
@@ -24,6 +35,11 @@ public class ProdutoDAO extends BancoDeDados {
 		}
 	}
 
+	/**
+	 * Adiciona um produto ao BD
+	 * @param produto produto a ser salvo 
+	 * @return boolean resultado da operacao
+	 */
 	public static boolean adicionaProdutoNoEstoque(Produto produto) {
 		Statement statement;
 		try {
@@ -39,6 +55,10 @@ public class ProdutoDAO extends BancoDeDados {
 		}
 	}
 	
+	/**
+	 * Busta todos os produtos salvos no BD
+	 * @return ArrayList lista de produtos no estoque
+	 */
 	public static ArrayList<Produto> listaProdutosNoEstoque() {
 		ArrayList<Produto> produtosNoEstoque = new ArrayList<Produto>();
 		
@@ -57,6 +77,12 @@ public class ProdutoDAO extends BancoDeDados {
 		return produtosNoEstoque;
 	}
 	
+	/**
+	 * Aumenta a quantidade de um produto no estoque
+	 * @param codBarras codigo de barras do produto 
+	 * @param quantidade quantidade a ser incrementada
+	 * @return boolean resultado da operacao
+	 */
 	public static boolean aumentaQuantidadeNoEstoque(String codBarras, int quantidade) {
 		Statement statement;
 		try {
@@ -75,6 +101,12 @@ public class ProdutoDAO extends BancoDeDados {
 		}
 	}
 	
+	/**
+	 * Diminui a quantidade de um produto no estoque
+	 * @param codBarras codigo de barras do produto 
+	 * @param quantidade quantidade a ser decrementada
+	 * @return boolean resultado da operacao
+	 */
 	public static boolean diminuiQuantidadeNoEstoque(String codBarras, int quantidade) {
 		Statement statement;
 		try {
@@ -93,6 +125,10 @@ public class ProdutoDAO extends BancoDeDados {
 		}
 	}
 	
+	/**
+	 * Conta o numero de produtos salvos no BD
+	 * @return int numero de produtos no estoque
+	 */
 	public static int numeroDeProdutosNoEstoque() {
 		int numProdutos = 0;
 		Statement statement;
@@ -110,6 +146,10 @@ public class ProdutoDAO extends BancoDeDados {
 		return numProdutos;
 	}
 	
+	/**
+	 * Calcula o valor financeiro dos produtos em estoque
+	 * @return double valor financeiro dos produtos em estoque
+	 */
 	public static double valorFinanceiroDoEstoque() {
 		double valorFinanceiro = 0;
 		Statement statement;

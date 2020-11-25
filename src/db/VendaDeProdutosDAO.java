@@ -1,3 +1,9 @@
+/*
+* Classe VendaDeProdutosDAO - Representa a manipulação dos obj VendaDeProdutos no BD
+* @author Lucas Carvalho 
+* @version 1.0, 2020-11-12
+*/
+
 package db;
 
 import java.sql.ResultSet;
@@ -8,6 +14,12 @@ import java.util.ArrayList;
 import model.VendaDeProdutos;
 
 public class VendaDeProdutosDAO extends BancoDeDados {
+	
+	/**
+	 * Adiciona uma venda ao BD
+	 * @param venda venda feita 
+	 * @return boolean resultado da operacao
+	 */
 	public static boolean adicionaVenda(VendaDeProdutos venda) {
 		Statement statement;
 		try {
@@ -23,6 +35,10 @@ public class VendaDeProdutosDAO extends BancoDeDados {
 		}
 	}
 	
+	/**
+	 * Busca todas as vendas salvas no BD 
+	 * @return ArrayList lista com vendas salvas no BD
+	 */
 	public static ArrayList<VendaDeProdutos> listaVendas() {
 		ArrayList<VendaDeProdutos> listaDeVendas = new ArrayList<VendaDeProdutos>();
  		Statement statement;
@@ -40,6 +56,10 @@ public class VendaDeProdutosDAO extends BancoDeDados {
 		return listaDeVendas;
 	}
 	
+	/**
+	 * Busca pelo valor financeiro das vendas salvas no BD
+	 * @return double valor financeiro das vendas salvas 
+	 */
 	public static double valorFinanceiroVendas() {
 		double valorFinanceiro = 0;
 		Statement statement;

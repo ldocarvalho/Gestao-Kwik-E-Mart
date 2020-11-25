@@ -1,3 +1,9 @@
+/*
+* Classe RelatorioDeVendasWindow - Representa a janela de relatório de vendas feitas na aplicação
+* @author Lucas Carvalho 
+* @version 1.0, 2020-11-14
+*/
+
 package window;
 
 import java.awt.BorderLayout;
@@ -15,10 +21,12 @@ import model.VendaDeProdutos;
 
 public class RelatorioDeVendasWindow {
 
-	private JFrame frame;
-	private ArrayList<VendaDeProdutos> listaDeVendas;
+	private JFrame frame; /** Frame principal */
+	private ArrayList<VendaDeProdutos> listaDeVendas; /** Lista de vendas de produtos salvas no estoque */
 
-
+	/*
+	* Construtor da classe.
+	*/
 	public RelatorioDeVendasWindow() {
 		frame = new JFrame();
 		frame.getContentPane().setBackground(new Color(51,13,160));

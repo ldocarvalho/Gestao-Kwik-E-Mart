@@ -1,3 +1,9 @@
+/*
+* Classe CompraDeProdutosDAO - Representa a manipulação dos obj Usuario no BD
+* @author Lucas Carvalho 
+* @version 1.0, 2020-11-12
+*/
+
 package db;
 
 import model.Usuario;
@@ -5,6 +11,12 @@ import java.sql.*;
 
 public class UsuarioDAO extends BancoDeDados {
 	
+	/**
+	 * Busca um usuario salvo no BD
+	 * @param nomeUsuario nome de usuario do usuario 
+	 * @param senha senha do usuario
+	 * @return Usuario usuario salvo no sistema
+	 */
 	public static Usuario getUsuarioSalvo(String nomeUsuario, String senha) {
 		Statement statement;
 		try {
@@ -21,6 +33,12 @@ public class UsuarioDAO extends BancoDeDados {
 		}
 	}
 	
+	/**
+	 * Insere um usuario no BD
+	 * @param nomeUsuario nome de usuario do usuario 
+	 * @param senha senha do usuario
+	 * @return boolean resultado da operacao
+	 */
 	public static boolean cadastraUsuario(String nomeUsuario, String senha) {
 		Statement statement;
 		try {

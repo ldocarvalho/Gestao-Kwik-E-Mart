@@ -1,3 +1,9 @@
+/*
+* Classe VendaDeProdutosWindow - Representa a janela de venda de produtos na aplicação
+* @author Lucas Carvalho 
+* @version 1.0, 2020-11-13
+*/
+
 package window;
 
 import java.awt.Color;
@@ -17,14 +23,13 @@ import model.Produto;
 
 public class VendaDeProdutosWindow {
 
-	private JFrame frame;
-	private JTextField descricao;
-	private JTextField codBarras;
-	private JTextField quantidade;
-	private JTextField preco;
+	private JFrame frame; /** Frame principal */
 	
-	private ArrayList<Produto> produtos = new ArrayList<Produto>();
+	private ArrayList<Produto> produtos = new ArrayList<Produto>(); /** Lista de produtos a serem salvos no estoque */
 	
+	/*
+	* Construtor da classe.
+	*/
 	public VendaDeProdutosWindow() {
 		frame = new JFrame();
 		frame.getContentPane().setLayout(null);
@@ -50,17 +55,17 @@ public class VendaDeProdutosWindow {
 		quantidadeLabel.setBounds(409, 294, 86, 16);
 		frame.getContentPane().add(quantidadeLabel);
 		
-		descricao = new JTextField();
+		JTextField descricao = new JTextField();
 		descricao.setBounds(29, 251, 288, 26);
 		frame.getContentPane().add(descricao);
 		descricao.setColumns(10);
 		
-		codBarras = new JTextField();
+		JTextField codBarras = new JTextField();
 		codBarras.setBounds(29, 322, 288, 26);
 		frame.getContentPane().add(codBarras);
 		codBarras.setColumns(10);
 		
-		quantidade = new JTextField();
+		JTextField quantidade = new JTextField();
 		quantidade.setBounds(409, 322, 86, 26);
 		frame.getContentPane().add(quantidade);
 		quantidade.setColumns(10);
@@ -77,6 +82,12 @@ public class VendaDeProdutosWindow {
 		});
 		btnNewButton.setBounds(409, 418, 214, 29);
 		frame.getContentPane().add(btnNewButton);
+		
+		JTextField preco = new JTextField();
+		preco.setColumns(10);
+		preco.setBounds(409, 256, 86, 26);
+		frame.getContentPane().add(preco);
+
 		
 		JButton btnNewButton_1 = new JButton(new ImageIcon(this.getClass().getResource("/botao-adicionarproduto.png")));
 		btnNewButton_1.addActionListener(new ActionListener() {
@@ -96,12 +107,7 @@ public class VendaDeProdutosWindow {
 		});
 		btnNewButton_1.setBounds(103, 418, 214, 29);
 		frame.getContentPane().add(btnNewButton_1);
-		
-		preco = new JTextField();
-		preco.setColumns(10);
-		preco.setBounds(409, 256, 86, 26);
-		frame.getContentPane().add(preco);
-		
+				
 		JLabel quantidadeLabel_1 = new JLabel(new ImageIcon(this.getClass().getResource("/label-preco.png")));
 		quantidadeLabel_1.setBounds(409, 228, 81, 16);
 		frame.getContentPane().add(quantidadeLabel_1);

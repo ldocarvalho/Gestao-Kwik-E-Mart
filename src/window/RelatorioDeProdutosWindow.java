@@ -1,3 +1,9 @@
+/*
+* Classe RelatorioDeProdutosWindow - Representa a janela de relatório de produtos no estoque na aplicação
+* @author Lucas Carvalho 
+* @version 1.0, 2020-11-20
+*/
+
 package window;
 
 import java.awt.Color;
@@ -14,9 +20,12 @@ import model.Produto;
 
 public class RelatorioDeProdutosWindow {
 
-	private JFrame frame;
-	private ArrayList<Produto> produtosNoEstoque;
+	private JFrame frame; /** Frame principal */
+	private ArrayList<Produto> produtosNoEstoque; /** Lista de produtos salvos no estoque */
 
+	/*
+	* Construtor da classe.
+	*/
 	public RelatorioDeProdutosWindow() {
 		frame = new JFrame();
 		frame.getContentPane().setBackground(new Color(51,13,160));

@@ -1,3 +1,9 @@
+/*
+* Classe FinanceiroWindow - Representa a janela de relatório financeiro na aplicação
+* @author Lucas Carvalho 
+* @version 1.0, 2020-11-14
+*/
+
 package window;
 
 import java.awt.Color;
@@ -13,10 +19,13 @@ import db.VendaDeProdutosDAO;
 
 public class FinanceiroWindow {
 
-	private JFrame frame;
+	private JFrame frame; /** Frame principal */
 
-	private double lucroTotal = VendaDeProdutosDAO.valorFinanceiroVendas() - CompraDeProdutosDAO.valorFinanceiroCompras();
+	private double lucroTotal = VendaDeProdutosDAO.valorFinanceiroVendas() - CompraDeProdutosDAO.valorFinanceiroCompras(); /** Lucro total do estoque */
 
+	/*
+	* Construtor da classe.
+	*/
 	public FinanceiroWindow() {
 		frame = new JFrame();
 		frame.getContentPane().setLayout(null);

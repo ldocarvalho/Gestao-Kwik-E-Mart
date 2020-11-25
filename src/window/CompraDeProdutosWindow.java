@@ -1,3 +1,9 @@
+/*
+* Classe CompraDeProdutosWindow - Representa a janela de compra de produtos na aplicação
+* @author Lucas Carvalho 
+* @version 1.0, 2020-11-13
+*/
+
 package window;
 
 
@@ -21,17 +27,13 @@ import javax.swing.Icon;
 
 public class CompraDeProdutosWindow {
 
-	private JFrame frame;
-	private JTextField descricao;
-	private JTextField precoCompra;
-	private JTextField codBarras;
-	private JTextField quantidade;
-	private JTextField precoVenda;
-	
-	private double totalCompra = 0.0;
-	
-	private ArrayList<Produto> produtos = new ArrayList<Produto>();
+	private JFrame frame; /** Frame principal */	
+	private double totalCompra = 0.0; /** Somatorio do total da compra */
+	private ArrayList<Produto> produtos = new ArrayList<Produto>(); /** Lista de produtos comprados */
 
+	/*
+	* Construtor da classe.
+	*/
 	public CompraDeProdutosWindow() {
 		frame = new JFrame();
 		frame.getContentPane().setLayout(null);
@@ -45,12 +47,12 @@ public class CompraDeProdutosWindow {
 		quantidadeLabel_1.setBounds(372, 242, 154, 16);
 		frame.getContentPane().add(quantidadeLabel_1);
 		
-		descricao = new JTextField();
+		JTextField descricao = new JTextField();
 		descricao.setColumns(10);
 		descricao.setBounds(31, 265, 288, 26);
 		frame.getContentPane().add(descricao);
 		
-		precoCompra = new JTextField();
+		JTextField precoCompra = new JTextField();
 		precoCompra.setColumns(10);
 		precoCompra.setBounds(372, 270, 123, 26);
 		frame.getContentPane().add(precoCompra);
@@ -63,12 +65,12 @@ public class CompraDeProdutosWindow {
 		quantidadeLabel.setBounds(565, 242, 86, 16);
 		frame.getContentPane().add(quantidadeLabel);
 		
-		codBarras = new JTextField();
+		JTextField codBarras = new JTextField();
 		codBarras.setColumns(10);
 		codBarras.setBounds(31, 336, 288, 26);
 		frame.getContentPane().add(codBarras);
 		
-		quantidade = new JTextField();
+		JTextField quantidade = new JTextField();
 		quantidade.setColumns(10);
 		quantidade.setBounds(565, 270, 123, 26);
 		frame.getContentPane().add(quantidade);
@@ -77,7 +79,7 @@ public class CompraDeProdutosWindow {
 		precoVendaLabel.setBounds(372, 308, 154, 16);
 		frame.getContentPane().add(precoVendaLabel);
 		
-		precoVenda = new JTextField();
+		JTextField precoVenda = new JTextField();
 		precoVenda.setColumns(10);
 		precoVenda.setBounds(372, 336, 123, 26);
 		frame.getContentPane().add(precoVenda);

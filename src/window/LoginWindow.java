@@ -1,3 +1,9 @@
+/*
+* Classe LoginWindow - Representa a janela de Login na aplicação
+* @author Lucas Carvalho 
+* @version 1.0, 2020-11-12
+*/
+
 package window;
 
 import java.awt.Color;
@@ -9,18 +15,19 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
+import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 
 import db.UsuarioDAO;
 import model.Usuario;
-import javax.swing.JPasswordField;
 
 public class LoginWindow {
 
-	private JFrame frame;
-	private JPasswordField passwordField;
-	private JPasswordField passwordField_1;
+	private JFrame frame; /** Frame principal */
 	
+	/*
+	* Construtor da classe.
+	*/
 	public LoginWindow() {
 		frame = new JFrame("Login");
 		frame.getContentPane().setLayout(null);

@@ -1,3 +1,9 @@
+/*
+* Classe CompraDeProdutosDAO - Representa a manipulação dos obj CompraDeProdutos no BD
+* @author Lucas Carvalho 
+* @version 1.0, 2020-11-12
+*/
+
 package db;
 
 import java.sql.ResultSet;
@@ -8,6 +14,12 @@ import java.util.ArrayList;
 import model.CompraDeProdutos;
 
 public class CompraDeProdutosDAO extends BancoDeDados {
+	
+	/**
+	 * Adiciona uma compra ao BD
+	 * @param compra compra feita 
+	 * @return boolean resultado da operacao
+	 */
 	public static boolean adicionaCompra(CompraDeProdutos compra) {
 		Statement statement;
 		try {
@@ -20,6 +32,10 @@ public class CompraDeProdutosDAO extends BancoDeDados {
 		}
 	}
 	
+	/**
+	 * Busca todas as compras salvas no BD 
+	 * @return ArrayList lista com compras salvas no BD
+	 */
 	public static ArrayList<CompraDeProdutos> listaCompras() {
 		ArrayList<CompraDeProdutos> listaDeCompras = new ArrayList<CompraDeProdutos>();
 		
@@ -38,6 +54,10 @@ public class CompraDeProdutosDAO extends BancoDeDados {
 		return listaDeCompras;
 	}
 	
+	/**
+	 * Busca pelo valor financeiro das compras salvas no BD
+	 * @return double valor financeiro das compras salvas 
+	 */
 	public static double valorFinanceiroCompras() {
 		double valorFinanceiro = 0;
 		Statement statement;

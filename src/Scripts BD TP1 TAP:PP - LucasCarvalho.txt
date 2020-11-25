@@ -1,0 +1,39 @@
+/*
+Trabalho Prático 1 - Técnicas Avançadas de Programação/Projeto de Programas
+2020/Especial
+
+Lucas de Oliveira Carvalho - 21850959
+Sistema de Gestão Kwik-E-Mart
+
+Abaixo seguem os scripts do banco de dados implementado no trabalho. 
+Para usar o BD, ir ao arquivo BancoDeDados.java e mudar o usuário e senha de acesso da sua máquina.
+
+*/
+
+CREATE DATABASE KwikEMartDB;
+SHOW DATABASES;
+
+USE KwikEMartDB;
+
+CREATE TABLE usuarios (
+	nome_usuario VARCHAR(100),
+    senha VARCHAR(60)
+);
+
+CREATE TABLE produtos ( 
+	cod_barras TEXT,
+    descricao TEXT,
+    quantidade INT,
+    preco DOUBLE
+);
+
+CREATE TABLE vendas ( 
+	total_compra DOUBLE,
+    total_pagamento DOUBLE,
+    troco DOUBLE,
+    forma_pagamento TEXT
+);
+
+CREATE TABLE compras (
+	total_compra DOUBLE
+);

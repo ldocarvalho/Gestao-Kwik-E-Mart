@@ -1,23 +1,31 @@
+/*
+* Classe RelatorioDeComprasWindow - Representa a janela de relatório de compras feitas na aplicação
+* @author Lucas Carvalho 
+* @version 1.0, 2020-11-14
+*/
+
 package window;
 
-import java.awt.BorderLayout;
 import java.awt.Color;
 import java.util.ArrayList;
 
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
 
 import db.CompraDeProdutosDAO;
 import model.CompraDeProdutos;
-import javax.swing.JLabel;
 
 public class RelatorioDeComprasWindow {
 
-	private JFrame frame;
-	private ArrayList<CompraDeProdutos> listaDeCompras;
+	private JFrame frame; /** Frame principal */
+	private ArrayList<CompraDeProdutos> listaDeCompras; /** Lista de compras de produtos salvas no estoque */
 
+	/*
+	* Construtor da classe.
+	*/
 	public RelatorioDeComprasWindow() {
 		frame = new JFrame();
 		frame.getContentPane().setBackground(new Color(51,13,160));

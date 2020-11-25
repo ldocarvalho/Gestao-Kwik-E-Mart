@@ -1,3 +1,9 @@
+/*
+* Classe VendaFinalizadaWindow - Representa a janela de venda finalizada na aplicação
+* @author Lucas Carvalho 
+* @version 1.0, 2020-11-13
+*/
+
 package window;
 
 import java.awt.BorderLayout;
@@ -19,12 +25,14 @@ import model.VendaDeProdutos;
 
 public class VendaFinalizadaWindow {
 
-	private JFrame frame;
-	private JTextField totalPagamento;
-	private JTextField troco;
+	private JFrame frame; /** Frame principal */
 	
-	private double soma = 0;
+	private double soma = 0; /** Somatorio do valor da venda finalizada */
 
+	/*
+	* Construtor da classe.
+	* @param produtosVendidos lista de produtos vendidos
+	*/
 	public VendaFinalizadaWindow(ArrayList<Produto> produtosVendidos) {
 		
 		for(Produto produto : produtosVendidos) {
@@ -66,12 +74,12 @@ public class VendaFinalizadaWindow {
 		lblNewLabel_3_1.setBounds(47, 320, 77, 16);
 		frame.getContentPane().add(lblNewLabel_3_1);
 		
-		totalPagamento = new JTextField();
+		JTextField totalPagamento = new JTextField();
 		totalPagamento.setBounds(189, 265, 269, 26);
 		frame.getContentPane().add(totalPagamento);
 		totalPagamento.setColumns(10);
 		
-		troco = new JTextField();
+		JTextField troco = new JTextField();
 		troco.setColumns(10);
 		troco.setBounds(189, 310, 269, 26);
 		frame.getContentPane().add(troco);

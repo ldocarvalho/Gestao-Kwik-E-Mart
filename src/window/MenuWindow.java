@@ -1,3 +1,9 @@
+/*
+* Classe MenuWindow - Representa a janela de Menu na aplicação
+* @author Lucas Carvalho 
+* @version 1.0, 2020-11-13
+*/
+
 package window;
 
 import java.awt.Color;
@@ -11,8 +17,11 @@ import javax.swing.JLabel;
 
 public class MenuWindow {
 
-	private JFrame frame;
+	private JFrame frame; /** Frame principal */
 
+	/*
+	* Construtor da classe.
+	*/
 	public MenuWindow() {
 		frame = new JFrame("Menu");
 		frame.getContentPane().setLayout(null);
